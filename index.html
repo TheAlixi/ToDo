@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>ToDo</h1>
+    <button id="addTaskBtn">Добавить задачу</button>
+    <div class="filters">
+      <label>Фильтр по статусу:</label>
+      <select id="statusFilter">
+        <option value="all">Все</option>
+        <option value="pending">В процессе</option>
+        <option value="completed">Завершено</option>
+      </select>
+      <label>Сортировка:</label>
+      <select id="sortFilter">
+        <option value="createdAt">Дата создания</option>
+        <option value="title">Алфавит</option>
+      </select>
+    </div>
+    <ul id="taskList"></ul>
+  </div>
+
+  <div id="taskModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Добавить/Редактировать задачу</h2>
+      <form id="taskForm">
+        <label for="title">Название:</label>
+        <input type="text" id="title" name="title" required>
+        <label for="description">Описание:</label>
+        <textarea id="description" name="description"></textarea>
+        <label for="deadline">Дедлайн:</label>
+        <input type="date" id="deadline" name="deadline" required>
+        <label for="tags">Теги:</label>
+        <input type="text" id="tags" name="tags" placeholder="Введите теги через запятую">
+        <label for="status">Статус:</label>
+        <select id="status" name="status">
+          <option value="pending">В процессе</option>
+          <option value="completed">Завершено</option>
+        </select>
+        <button type="submit">Сохранить</button>
+        <button type="button" id="cancelBtn">Отмена</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
