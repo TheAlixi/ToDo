@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="media.css">
+  <link rel="icon" type="image/png" href="res/logo.png"/>
+</head>
+<body>
+  <header>
+    <img src="res/logo.png" alt="" width="98px"/>
+    <div class="buttons_list">
+      <button id="addTaskBtn">
+        <img src="res/plus-sign.png" alt="" width="32px"/>
+        <p>Добавить задачу</p>
+      </button>
+    </div>
+  </header>
+  <div class="header-menu">
+    <button id="openFilters">
+      <img src="res/setting.png" alt="" width="32px"/>
+    </button>
+    <div class="filters">
+      <label>Фильтр по статусу:</label>
+      <div class="select-container">
+        <select id="statusFilter">
+          <option value="all">Все</option>
+          <option value="pending">В процессе</option>
+          <option value="completed">Завершено</option>
+        </select>
+      </div>
+      <label>Сортировка:</label>
+      <div class="select-container">      
+        <select id="sortFilter">
+          <option value="createdAt">Дата создания</option>
+          <option value="title">Алфавит</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <ul id="taskList"></ul>
+  </div>
+
+  <div id="taskModal" class="modal">
+    <div class="modal-content">
+      <h2 id="taskHeader">Добавить/Редактировать задачу</h2>
+      <form id="taskForm">
+        <label for="title">Название:</label>
+        <input type="text" id="title" name="title" required>
+        <label for="description">Описание:</label>
+        <textarea id="description" name="description"></textarea>
+        <label for="deadline">Дедлайн:</label>
+        <input type="date" id="deadline" name="deadline" required>
+        <label for="tags">Теги:</label>
+        <input type="text" id="tags" name="tags" placeholder="Введите теги через запятую (До 4 включительно)">
+        <label for="status">Статус:</label>
+        <select id="status" name="status">
+          <option value="pending">В процессе</option>
+          <option value="completed">Завершено</option>
+        </select>
+        <button type="submit" id="sumbitBtn">Сохранить</button>
+        <button type="button" id="cancelBtn">Отмена</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>
