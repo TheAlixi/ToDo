@@ -16,6 +16,19 @@
         <img src="res/plus-sign.png" alt="" width="32px"/>
         <p>Добавить задачу</p>
       </button>
+      <button id="exportCSV">
+        <img src="res/export.png" alt="" width="32px"/>
+        <p>Экспорт CSV</p>
+      </button>
+      <button id="importCSV">
+        <img src="res/import.png" alt="" width="32px"/>
+        <p>Импорт CSV</p>
+        <input type="file" id="importFile" accept=".csv" style="display: none;">
+      </button>
+      <button id="infoBtn">
+        <img src="res/info.png" alt="" width="32px"/>
+        <p>Инфо</p>
+      </button>
     </div>
   </header>
   <div class="header-menu">
@@ -29,6 +42,19 @@
           <option value="all">Все</option>
           <option value="pending">В процессе</option>
           <option value="completed">Завершено</option>
+          <option value="completed">Завершено</option>
+        </select>
+      </div>
+      <label>Фильтр по тегу:</label>
+      <div class="select-container">
+        <select id="tagFilter">
+          <option value="all">Все</option>
+          <option value="fin">Финансы</option>
+          <option value="sp">Спорт</option>
+          <option value="work">Работа</option>
+          <option value="edu">Учёба</option>
+          <option value="home">Дом</option>
+          <option value="fl">Цветы</option>
         </select>
       </div>
       <label>Сортировка:</label>
@@ -36,8 +62,12 @@
         <select id="sortFilter">
           <option value="createdAt">Дата создания</option>
           <option value="title">Алфавит</option>
+          <option value="deadline_b">Дедлайн (Ближайшее)</option>
+          <option value="deadline_d">Дедлайн (Самое дальнее)</option>
         </select>
       </div>
+      <label>Поиск:</label>
+      <input type="text" id="searchQuery" name="search">
     </div>
   </div>
   <div class="container">
@@ -56,18 +86,26 @@
         <input type="date" id="deadline" name="deadline" required>
         <label for="tags">Теги:</label>
         <input type="text" id="tags" name="tags" placeholder="Введите теги через запятую (До 4 включительно)">
+        <ul class="helptags">
+          <li><button id="money"><img src="res/money.png" alt="" width="16px"/>Финансы</button></li>
+          <li><button id="sport"><img src="res/sport.png" alt="" width="16px"/>Спорт</button></li>
+          <li><button id="work"><img src="res/work.png" alt="" width="16px"/>Работа</button></li>
+          <li><button id="education"><img src="res/education.png" alt="" width="16px"/>Учёба</button></li>
+          <li><button id="house"><img src="res/home.png" alt="" width="16px"/>Дом</button></li>
+          <li><button id="flowers"><img src="res/tulips.png" alt="" width="16px"/>Цветы</button></li>
+        </ul>
         <label for="status">Статус:</label>
         <select id="status" name="status">
           <option value="pending">В процессе</option>
           <option value="completed">Завершено</option>
         </select>
-        <button type="submit" id="sumbitBtn">Сохранить</button>
-        <button type="button" id="cancelBtn">Отмена</button>
+        <button class="formbtn" type="submit" id="sumbitBtn">Сохранить</button>
+        <button class="formbtn" type="button" id="cancelBtn">Отмена</button>
       </form>
     </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+  <script src="scripts/script.js"></script>
 </body>
 </html>
