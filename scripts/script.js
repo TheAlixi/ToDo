@@ -3,9 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const taskModal = document.getElementById('taskModal');
   const taskForm = document.getElementById('taskForm');
   const taskHeader = document.getElementById('taskHeader');
+
+  const infoModal = document.getElementById('infoModal');
+
   const sumbitButton = document.getElementById('sumbitBtn');
   const addTaskBtn = document.getElementById('addTaskBtn');
+  const infoBtn = document.getElementById('infoBtn');
   const cancelBtn = document.getElementById('cancelBtn');
+  const closeBtn = document.getElementById('closeBtn');
   const openFiltersButton = document.getElementById('openFilters');
   const exportCsvBtn = document.getElementById('exportCSV');
   const importCsvBtn = document.getElementById('importCSV');
@@ -195,6 +200,11 @@ document.addEventListener('DOMContentLoaded', () => {
     editingTaskId = task.id || null;
   };
 
+  const showInfoModal = () => {
+    $('#infoModal').fadeIn(200);
+    infoModal.style.display = 'flex';
+  };
+
   const showTaskRead = (task = {}) => {
     $('#taskModal').fadeIn(200);
     taskModal.style.display = 'flex';
@@ -289,6 +299,10 @@ document.addEventListener('DOMContentLoaded', () => {
     $('#taskModal').fadeOut(200);
     taskForm.reset();
     editingTaskId = null;
+  };
+
+  const hideInfoModal = () => {
+    $('#infoModal').fadeOut(200);
   };
 
   const addTask = (task) => {
@@ -421,6 +435,10 @@ document.addEventListener('DOMContentLoaded', () => {
     hideModal();
   });
 
+  infoBtn.addEventListener('click', () => {
+    showInfoModal();
+  });
+
   addTaskBtn.addEventListener('click', () => {
     showModal();
   });
@@ -440,6 +458,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   cancelBtn.addEventListener('click', hideModal);
+  closeBtn.addEventListener('click', hideInfoModal);
   openFiltersButton.addEventListener('click', openCloseFilters);
   exportCsvBtn.addEventListener('click', exportTasksToCSV);
   importCsvBtn.addEventListener('click', () => {

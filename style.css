@@ -272,6 +272,12 @@ header {
   max-width: 500px;
 }
 
+#infoModal .modal-content {
+  background-image: url("res/modals/InfoModalBG.png");
+  max-width: 648px;
+  height: 380px;
+}
+
 .modal-content h2 {
   color: #fff;
   user-select: none;
@@ -339,6 +345,39 @@ form .formbtn:hover {
 }
 #cancelBtn:hover {
   background-color: #252833;
+  transition: background-color 0.3s;
+}
+
+.left_block {
+  padding: 18px;
+  padding-top: 12px;
+  width: 35%;
+  user-select: none;
+}
+.left_block p {
+  color: white;
+  user-select: none;
+  margin-bottom: 14px;
+}
+.left_block h2 {
+  color: #E63462;
+  user-select: none;
+  margin-bottom: 20px;
+}
+.left_block button {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #E63462;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 12px;
+  margin-right: 4px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+.left_block button:hover {
+  background-color: #57364b;
   transition: background-color 0.3s;
 }
 
