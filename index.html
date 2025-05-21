@@ -10,11 +10,11 @@
 </head>
 <body>
   <header>
-    <img src="res/logo.png" alt="" width="98px"/>
+    <img src="res/logo.png" alt="" width="62px" id="logo"/>
     <div class="buttons_list">
       <button id="addTaskBtn">
         <img src="res/plus-sign.png" alt="" width="32px"/>
-        <p>Добавить задачу</p>
+        <p>Новая задача</p>
       </button>
       <button id="exportCSV">
         <img src="res/export.png" alt="" width="32px"/>
@@ -31,48 +31,55 @@
       </button>
     </div>
   </header>
-  <div class="header-menu">
-    <button id="openFilters">
-      <img src="res/setting.png" alt="" width="32px"/>
-    </button>
-    <div class="filters">
-      <label>Фильтр по статусу:</label>
-      <div class="select-container">
-        <select id="statusFilter">
-          <option value="all">Все</option>
-          <option value="pending">В процессе</option>
-          <option value="completed">Завершено</option>
-        </select>
+  <div class="main">
+    <div class="header-menu">
+      <button id="openFilters">
+        <img src="res/setting.png" alt="" width="32px"/>
+      </button>
+      <div class="filters">
+        <div class="filter">
+          <label>Фильтр по статусу:</label>
+          <div class="select-container">
+            <select id="statusFilter">
+              <option value="all">Все</option>
+              <option value="pending">В процессе</option>
+              <option value="completed">Завершено</option>
+            </select>
+          </div>
+        </div>
+        <div class="filter">
+          <label>Фильтр по тегу:</label>
+          <div class="select-container">
+            <select id="tagFilter">
+              <option value="all">Все</option>
+              <option value="fin">Финансы</option>
+              <option value="sp">Спорт</option>
+              <option value="work">Работа</option>
+              <option value="edu">Учёба</option>
+              <option value="home">Дом</option>
+              <option value="fl">Цветы</option>
+            </select>
+          </div>
+        </div>
+        <div class="filter">
+          <label>Сортировка:</label>
+          <div class="select-container">      
+            <select id="sortFilter">
+              <option value="createdAt">Дата создания</option>
+              <option value="title">Алфавит</option>
+              <option value="deadline_b">Дедлайн (Ближ.)</option>
+              <option value="deadline_d">Дедлайн (Даль.)</option>
+            </select>
+          </div>
+        </div>
+        <label>Поиск:</label>
+        <input type="text" id="searchQuery" name="search">
       </div>
-      <label>Фильтр по тегу:</label>
-      <div class="select-container">
-        <select id="tagFilter">
-          <option value="all">Все</option>
-          <option value="fin">Финансы</option>
-          <option value="sp">Спорт</option>
-          <option value="work">Работа</option>
-          <option value="edu">Учёба</option>
-          <option value="home">Дом</option>
-          <option value="fl">Цветы</option>
-        </select>
-      </div>
-      <label>Сортировка:</label>
-      <div class="select-container">      
-        <select id="sortFilter">
-          <option value="createdAt">Дата создания</option>
-          <option value="title">Алфавит</option>
-          <option value="deadline_b">Дедлайн (Ближайшее)</option>
-          <option value="deadline_d">Дедлайн (Самое дальнее)</option>
-        </select>
-      </div>
-      <label>Поиск:</label>
-      <input type="text" id="searchQuery" name="search">
+    </div>
+    <div class="container">
+      <ul id="taskList"></ul>
     </div>
   </div>
-  <div class="container">
-    <ul id="taskList"></ul>
-  </div>
-
   <div id="taskModal" class="modal">
     <div class="modal-content">
       <h2 id="taskHeader">Добавить/Редактировать задачу</h2>

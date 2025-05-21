@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const importFile = document.getElementById('importFile');
   
   let filtersOpened = false;
-  let buttonCurrentColor = '';
   let anim = false;
 
   let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -435,6 +434,10 @@ document.addEventListener('DOMContentLoaded', () => {
     hideModal();
   });
 
+  window.addEventListener('resize', () => {
+    renderTasks();
+  });
+
   infoBtn.addEventListener('click', () => {
     showInfoModal();
   });
@@ -470,7 +473,6 @@ document.addEventListener('DOMContentLoaded', () => {
   tagFilter.addEventListener('change', renderTasks);
 
   searchQuery.addEventListener('input', renderTasks);
-
 
   renderTasks();
 
